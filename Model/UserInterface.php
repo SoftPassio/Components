@@ -2,9 +2,10 @@
 
 namespace AppVerk\Components\Model;
 
+use AppVerk\Components\Doctrine\EntityInterface;
 use Symfony\Component\Security\Core\User\UserInterface as BaseUserInterface;
 
-interface UserInterface extends BaseUserInterface
+interface UserInterface extends BaseUserInterface, EntityInterface
 {
     /**
      * @return mixed

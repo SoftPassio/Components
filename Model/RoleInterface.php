@@ -2,7 +2,9 @@
 
 namespace AppVerk\Components\Model;
 
-interface RoleInterface
+use AppVerk\Components\Doctrine\EntityInterface;
+
+interface RoleInterface extends EntityInterface
 {
     /**
      * @return mixed

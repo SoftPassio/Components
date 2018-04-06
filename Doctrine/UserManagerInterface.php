@@ -3,11 +3,15 @@
 namespace AppVerk\Components\Doctrine;
 
 use Gedmo\Timestampable\Timestampable;
-use Symfony\Component\Security\Core\User\UserInterface;
+use AppVerk\Components\Model\UserInterface;
 
 interface UserManagerInterface extends Timestampable, ManagerInterface
 {
-    public function findByEmail(string $email);
+    public function findUserByEmail(string $email);
+
+    public function findUserByUsername(string $username);
 
     public function updateUser(UserInterface $user);
+
+    public function getUser(int $id) : UserInterface;
 }
