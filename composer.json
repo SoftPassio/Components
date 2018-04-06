@@ -1,0 +1,24 @@
+{
+  "name": "app-verk/components",
+  "description": "Appverk projects components",
+  "autoload": {
+    "psr-4": {
+      "AppVerk\\Components\\": ""
+    }
+  },
+  "authors": [
+    {
+      "name": "Michał Jędraszczyk",
+      "email": "michal.jedraszczyk@appverk.com"
+    }
+  ],
+  "keywords": [
+    "symfony components",
+  ],
+  "license": [
+    "MIT"
+  ],
+  "require": {
+    "php": "^7.0"
+  }
+}
