@@ -38,8 +38,10 @@ interface RoleInterface extends EntityInterface
 
     /**
      * Remove user
+     * @param UserInterface $user
+     * @return
      */
-    public function removeUser($user);
+    public function removeUser(UserInterface $user);
 
     /**
      * Get users

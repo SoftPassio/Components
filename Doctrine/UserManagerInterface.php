@@ -13,5 +13,11 @@ interface UserManagerInterface extends Timestampable, ManagerInterface
 
     public function updateUser(UserInterface $user);
 
-    public function getUser(int $id) : UserInterface;
+    public function getUser($id) : ?UserInterface;
+
+    public function getUserByToken(string $token): UserInterface;
+
+    public function encodePassword(UserInterface $user, string $password): string;
+
+    public function findUserByPassword(string $password): ?UserInterface;
 }

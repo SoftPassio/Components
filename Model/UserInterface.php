@@ -77,7 +77,7 @@ interface UserInterface extends BaseUserInterface, EntityInterface
     /**
      * @return mixed
      */
-    public function getRole();
+    public function getRoles();
 
     /**
      * @param mixed $enabled
@@ -116,22 +116,13 @@ interface UserInterface extends BaseUserInterface, EntityInterface
 
     public function eraseCredentials();
 
-    /**
-     * {@inheritdoc}
-     */
-    public function isSuperAdmin(): bool;
-
     public function isPasswordRequestNonExpired(): bool;
-
-    /**
-     *
-     * @return (string|boolean) The user role
-     */
-    public function getRoles();
 
     public function hasRole(string $role);
 
-    public function setRole(RoleInterface $role = null);
+    public function addRole(RoleInterface $newRole = null);
+
+    public function removeRole(RoleInterface $role);
 
     public function __toString();
 }
