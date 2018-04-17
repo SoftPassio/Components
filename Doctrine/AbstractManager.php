@@ -24,9 +24,9 @@ abstract class AbstractManager implements ManagerInterface
         $this->objectManager->flush();
     }
 
-    public function persist(EntityInterface $article)
+    public function persist(EntityInterface $entity)
     {
-        $this->objectManager->persist($article);
+        $this->objectManager->persist($entity);
     }
 
     public function flush()
@@ -34,9 +34,9 @@ abstract class AbstractManager implements ManagerInterface
         $this->objectManager->flush();
     }
 
-    public function remove(EntityInterface $article)
+    public function remove(EntityInterface $entity)
     {
-        $this->objectManager->remove($article);
+        $this->objectManager->remove($entity);
         $this->objectManager->flush();
     }
 

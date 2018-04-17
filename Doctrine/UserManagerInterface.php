@@ -20,4 +20,6 @@ interface UserManagerInterface extends Timestampable, ManagerInterface
     public function encodePassword(UserInterface $user, string $password): string;
 
     public function findUserByPassword(string $password): ?UserInterface;
+
+    public function removeUser(UserInterface $user);
 }
