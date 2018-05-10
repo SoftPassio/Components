@@ -2,15 +2,35 @@
 
 namespace AppVerk\Components\Model;
 
-use AppVerk\Components\Doctrine\EntityInterface;
-use Symfony\Component\Security\Core\User\UserInterface as BaseUserInterface;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
+use DateTime;
 
-interface UserInterface extends BaseUserInterface, EntityInterface
+interface UserInterface extends AdvancedUserInterface, \Serializable
 {
+    /**
+     * Default role for every user
+     */
+    const ROLE_DEFAULT = 'ROLE_USER';
+
+    /**
+     * Main admin role
+     */
+    const ROLE_MASTER = 'ROLE_MASTER';
+
+    /**
+     * Use that role to manage client hidden methods
+     */
+    const ROLE_DEVELOPER = 'ROLE_DEVELOPER';
+
+    /**
+     *  resetting token valid 2 days
+     */
+    const TOKEN_TTL = 172800;
+
     /**
      * @return mixed
      */
-    public function getId();
+    public function getId() : ?int;
 
     public function __construct();
 
@@ -27,7 +47,7 @@ interface UserInterface extends BaseUserInterface, EntityInterface
     /**
      * @return string
      */
-    public function getFirstName();
+    public function getFirstName() : ?string;
 
     /**
      * @param string $firstName
@@ -37,7 +57,7 @@ interface UserInterface extends BaseUserInterface, EntityInterface
     /**
      * @return string
      */
-    public function getLastName();
+    public function getLastName() : ?string;
 
     /**
      * @param string $lastName
@@ -47,7 +67,7 @@ interface UserInterface extends BaseUserInterface, EntityInterface
     /**
      * @return string
      */
-    public function getEmail();
+    public function getEmail() : ?string;
 
     /**
      * @param string $email
@@ -57,7 +77,7 @@ interface UserInterface extends BaseUserInterface, EntityInterface
     /**
      * @return string
      */
-    public function getPassword();
+    public function getPassword() : ?string;
 
     /**
      * @param string $password
@@ -77,52 +97,52 @@ interface UserInterface extends BaseUserInterface, EntityInterface
     /**
      * @return mixed
      */
-    public function getRoles();
+    public function getRoles() : array ;
 
     /**
-     * @param mixed $enabled
+     * @param bool $enabled
      */
-    public function setEnabled($enabled);
+    public function setEnabled(bool $enabled);
 
     /**
      * @return mixed
      */
-    public function getPasswordRequestedAt();
+    public function getPasswordRequestedAt() : ?DateTime;
 
     /**
      * @param mixed $passwordRequestedAt
      */
-    public function setPasswordRequestedAt($passwordRequestedAt);
+    public function setPasswordRequestedAt(DateTime $passwordRequestedAt);
 
     /**
      * @return mixed
      */
-    public function getPasswordRequestToken();
+    public function getPasswordRequestToken() : ?string;
 
     /**
      * @param mixed $passwordRequestToken
      */
-    public function setPasswordRequestToken($passwordRequestToken);
+    public function setPasswordRequestToken(string $passwordRequestToken);
 
     /**
      * @return mixed
      */
-    public function getPhone();
+    public function getPhone() : ?string;
 
     /**
      * @param mixed $phone
      */
-    public function setPhone($phone);
+    public function setPhone(string $phone);
 
     public function eraseCredentials();
 
     public function isPasswordRequestNonExpired(): bool;
 
-    public function hasRole(string $role);
+    public function hasRole(string $role) : bool;
 
-    public function addRole(RoleInterface $newRole = null);
+    public function addRole(string $newRole = null);
 
-    public function removeRole(RoleInterface $role);
+    public function removeRole(string $role);
 
     public function __toString();
 }
