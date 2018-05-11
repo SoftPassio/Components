@@ -40,7 +40,7 @@ abstract class AbstractManager implements ManagerInterface
         $this->objectManager->flush();
     }
 
-    public function find(int $id) : EntityInterface
+    public function find(int $id) : ?EntityInterface
     {
         return $this->getRepository()->find($id);
     }
