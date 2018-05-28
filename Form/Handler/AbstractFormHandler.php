@@ -6,7 +6,6 @@ use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Form\FormInterface;
-use Symfony\Component\Form\FormView;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Translation\TranslatorInterface;
@@ -94,7 +93,7 @@ abstract class AbstractFormHandler
      * @param FormInterface $form
      * @return array
      */
-    protected function getErrorsFromForm(FormInterface $form): array
+    protected function getErrorsFromForm(FormInterface $form)
     {
         $errors = [];
         /** @var FormError $error */
@@ -141,12 +140,12 @@ abstract class AbstractFormHandler
     /**
      * @return array
      */
-    public function getErrors(): array
+    public function getErrors()
     {
         return $this->errors;
     }
 
-    public function getErrorsAsString(): string
+    public function getErrorsAsString()
     {
         $message = '';
         foreach ($this->errors as $error) {
@@ -177,7 +176,7 @@ abstract class AbstractFormHandler
         return implode("", explode(", ", $message, 2));
     }
 
-    public function getFormView(): FormView
+    public function getFormView()
     {
         $this->validateForm();
 
@@ -191,7 +190,7 @@ abstract class AbstractFormHandler
         }
     }
 
-    protected function addFormError(string $message, array $params = [])
+    protected function addFormError($message, array $params = [])
     {
         $message = $this->translator->trans($message, $params, 'forms');
         $this->form->addError(new FormError($message));

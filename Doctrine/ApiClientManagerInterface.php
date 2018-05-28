@@ -4,7 +4,7 @@ namespace AppVerk\Components\Doctrine;
 
 interface ApiClientManagerInterface
 {
-    public function findClientByCredentials(string $clientId, string $secret);
+    public function findClientByCredentials($clientId, $secret);
 
-    public function clientExists(string $clientId): bool;
+    public function clientExists($clientId);
 }

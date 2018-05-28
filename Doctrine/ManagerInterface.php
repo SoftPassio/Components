@@ -7,7 +7,7 @@ use Doctrine\Common\Persistence\ObjectRepository;
 
 interface ManagerInterface
 {
-    public function __construct(string $className, ObjectManager $objectManager);
+    public function __construct($className, ObjectManager $objectManager);
 
     /**
      * @return ObjectRepository

@@ -125,7 +125,7 @@ trait LogEntryEntityTrait
     /**
      * @return DateTime
      */
-    public function getLoggedAt(): \DateTime
+    public function getLoggedAt()
     {
         return $this->loggedAt;
     }

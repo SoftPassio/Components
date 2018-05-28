@@ -12,7 +12,7 @@ abstract class AbstractManager implements ManagerInterface
 
     protected $className;
 
-    public function __construct(string $className, ObjectManager $objectManager)
+    public function __construct($className, ObjectManager $objectManager)
     {
         $this->className = $className;
         $this->objectManager = $objectManager;
@@ -40,7 +40,7 @@ abstract class AbstractManager implements ManagerInterface
         $this->objectManager->flush();
     }
 
-    public function find(int $id) : ?EntityInterface
+    public function find($id)
     {
         return $this->getRepository()->find($id);
     }
@@ -53,7 +53,7 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * @return ObjectRepository
      */
-    public function getRepository(): ObjectRepository
+    public function getRepository()
     {
         /** @var ObjectRepository $objectRepository */
         $objectRepository = $this->objectManager->getRepository($this->className);

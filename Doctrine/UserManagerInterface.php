@@ -7,19 +7,19 @@ use AppVerk\Components\Model\UserInterface;
 
 interface UserManagerInterface extends Timestampable, ManagerInterface
 {
-    public function findUserByEmail(string $email);
+    public function findUserByEmail($email);
 
-    public function findUserByUsername(string $username);
+    public function findUserByUsername($username);
 
     public function updateUser(UserInterface $user);
 
-    public function getUser($id) : ?UserInterface;
+    public function getUser($id);
 
-    public function getUserByToken(string $token): UserInterface;
+    public function getUserByToken($token);
 
-    public function encodePassword(UserInterface $user, string $password): string;
+    public function encodePassword(UserInterface $user, $password);
 
-    public function findUserByPassword(string $password): ?UserInterface;
+    public function findUserByPassword($password);
 
     public function removeUser(UserInterface $user);
 }

@@ -4,5 +4,5 @@ namespace AppVerk\Components\Doctrine;
 
 interface UserProviderInterface
 {
-    public function findUserByUsername(string $username);
+    public function findUserByUsername($username);
 }

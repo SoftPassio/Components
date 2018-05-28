@@ -30,7 +30,7 @@ interface UserInterface extends AdvancedUserInterface, \Serializable
     /**
      * @return mixed
      */
-    public function getId() : ?int;
+    public function getId();
 
     public function __construct();
 
@@ -42,47 +42,47 @@ interface UserInterface extends AdvancedUserInterface, \Serializable
     /**
      * @param string $username
      */
-    public function setUsername(string $username);
+    public function setUsername($username);
 
     /**
      * @return string
      */
-    public function getFirstName() : ?string;
+    public function getFirstName();
 
     /**
      * @param string $firstName
      */
-    public function setFirstName(string $firstName);
+    public function setFirstName($firstName);
 
     /**
      * @return string
      */
-    public function getLastName() : ?string;
+    public function getLastName();
 
     /**
      * @param string $lastName
      */
-    public function setLastName(string $lastName);
+    public function setLastName($lastName);
 
     /**
      * @return string
      */
-    public function getEmail() : ?string;
+    public function getEmail();
 
     /**
      * @param string $email
      */
-    public function setEmail(string $email);
+    public function setEmail($email);
 
     /**
      * @return string
      */
-    public function getPassword() : ?string;
+    public function getPassword();
 
     /**
      * @param string $password
      */
-    public function setPassword(string $password);
+    public function setPassword($password);
 
     /**
      * @return string
@@ -92,22 +92,22 @@ interface UserInterface extends AdvancedUserInterface, \Serializable
     /**
      * @param string $salt
      */
-    public function setSalt(string $salt);
+    public function setSalt($salt);
 
     /**
      * @return mixed
      */
-    public function getRoles() : array ;
+    public function getRoles();
 
     /**
      * @param bool $enabled
      */
-    public function setEnabled(bool $enabled);
+    public function setEnabled($enabled);
 
     /**
      * @return mixed
      */
-    public function getPasswordRequestedAt() : ?DateTime;
+    public function getPasswordRequestedAt();
 
     /**
      * @param mixed $passwordRequestedAt
@@ -117,32 +117,32 @@ interface UserInterface extends AdvancedUserInterface, \Serializable
     /**
      * @return mixed
      */
-    public function getPasswordRequestToken() : ?string;
+    public function getPasswordRequestToken();
 
     /**
      * @param mixed $passwordRequestToken
      */
-    public function setPasswordRequestToken(string $passwordRequestToken);
+    public function setPasswordRequestToken($passwordRequestToken);
 
     /**
      * @return mixed
      */
-    public function getPhone() : ?string;
+    public function getPhone();
 
     /**
      * @param mixed $phone
      */
-    public function setPhone(string $phone);
+    public function setPhone($phone);
 
     public function eraseCredentials();
 
-    public function isPasswordRequestNonExpired(): bool;
+    public function isPasswordRequestNonExpired();
 
-    public function hasRole(string $role) : bool;
+    public function hasRole($role);
 
-    public function addRole(string $newRole = null);
+    public function addRole($newRole = null);
 
-    public function removeRole(string $role);
+    public function removeRole($role);
 
     public function __toString();
 }
