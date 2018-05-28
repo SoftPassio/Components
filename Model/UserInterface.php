@@ -112,7 +112,7 @@ interface UserInterface extends AdvancedUserInterface, \Serializable
     /**
      * @param mixed $passwordRequestedAt
      */
-    public function setPasswordRequestedAt(DateTime $passwordRequestedAt);
+    public function setPasswordRequestedAt($passwordRequestedAt);
 
     /**
      * @return mixed
