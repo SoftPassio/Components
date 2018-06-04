@@ -14,4 +14,6 @@ interface ManagerInterface
      */
     public function getRepository();
 
+    public function flush();
+
 }
