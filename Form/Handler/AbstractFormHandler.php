@@ -29,7 +29,7 @@ abstract class AbstractFormHandler
     /**
      * @var TranslatorInterface
      */
-    private $translator;
+    protected $translator;
 
     /**
      * @required
@@ -199,7 +199,14 @@ abstract class AbstractFormHandler
     protected function addChildFormError($child, $message, array $params = [])
     {
         $message = $this->translator->trans($message, $params, 'forms');
-        $this->form->get($child)->addError(new FormError($message));
+        $children = explode(".", $child);
+
+        $form = $this->form;
+        foreach ($children as $child){
+            $form = $form->get($child);
+        }
+
+        $form->addError(new FormError($message));
     }
 
     /**
