@@ -196,6 +196,12 @@ abstract class AbstractFormHandler
         $this->form->addError(new FormError($message));
     }
 
+    protected function addChildFormError($child, $message, array $params = [])
+    {
+        $message = $this->translator->trans($message, $params, 'forms');
+        $this->form->get($child)->addError(new FormError($message));
+    }
+
     /**
      * Place for your logic
      * Database operation or some kind of API action, etc
