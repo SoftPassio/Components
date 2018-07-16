@@ -1,9 +1,9 @@
 {
-  "name": "app-verk/components",
-  "description": "Appverk projects components",
+  "name": "soft-passio/components",
+  "description": "Softpassio projects components",
   "autoload": {
     "psr-4": {
-      "AppVerk\\Components\\": ""
+      "SoftPassio\\Components\\": ""
     }
   },
   "authors": [
