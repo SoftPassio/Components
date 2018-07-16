@@ -3,7 +3,7 @@
   "description": "Softpassio projects components",
   "autoload": {
     "psr-4": {
-      "SoftPassio\\Components\\": ""
+      "AppVerk\\Components\\": ""
     }
   },
   "authors": [
