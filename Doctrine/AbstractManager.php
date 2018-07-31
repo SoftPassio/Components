@@ -18,7 +18,7 @@ abstract class AbstractManager implements ManagerInterface
         $this->objectManager = $objectManager;
     }
 
-    public function persistAndFlash(EntityInterface $entity)
+    public function persistAndFlush(EntityInterface $entity)
     {
         $this->objectManager->persist($entity);
         $this->objectManager->flush();
