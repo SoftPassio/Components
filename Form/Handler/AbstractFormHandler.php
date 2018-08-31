@@ -51,7 +51,8 @@ abstract class AbstractFormHandler
 
     public function buildForm(string $formTypeClass, $model)
     {
-        $this->createForm($formTypeClass, $model);
+        $options = ['method' => $this->request->getMethod()];
+        $this->createForm($formTypeClass, $model, $options);
 
         return $this;
     }
@@ -131,10 +132,11 @@ abstract class AbstractFormHandler
     /**
      * @param $formTypeClass
      * @param $model
+     * @param $options
      */
-    private function createForm($formTypeClass, $model)
+    private function createForm($formTypeClass, $model, $options)
     {
-        $this->form = $this->formFactory->create($formTypeClass, $model);
+        $this->form = $this->formFactory->create($formTypeClass, $model, $options);
     }
 
     /**
