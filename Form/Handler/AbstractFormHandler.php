@@ -49,9 +49,9 @@ abstract class AbstractFormHandler
         $this->translator = $translator;
     }
 
-    public function buildForm(string $formTypeClass, $model)
+    public function buildForm(string $formTypeClass, $model, array $options = [])
     {
-        $this->createForm($formTypeClass, $model);
+        $this->createForm($formTypeClass, $model, $options);
 
         return $this;
     }
@@ -132,9 +132,9 @@ abstract class AbstractFormHandler
      * @param $formTypeClass
      * @param $model
      */
-    private function createForm($formTypeClass, $model)
+    private function createForm($formTypeClass, $model, array $options = [])
     {
-        $this->form = $this->formFactory->create($formTypeClass, $model);
+        $this->form = $this->formFactory->create($formTypeClass, $model, $options);
     }
 
     /**
