@@ -1,6 +1,6 @@
 <?php
 
-namespace AppVerk\Components\Form\Model;
+namespace SoftPassio\Components\Form\Model;
 
 interface FormModelInterface
 {

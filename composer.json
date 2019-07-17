@@ -3,13 +3,17 @@
   "description": "Softpassio projects components",
   "autoload": {
     "psr-4": {
-      "AppVerk\\Components\\": ""
+      "SoftPassio\\Components\\": ""
     }
   },
   "authors": [
     {
       "name": "Michał Jędraszczyk",
-      "email": "michal.jedraszczyk@appverk.com"
+      "email": "m.jedrasz@gmail.com"
+    },
+    {
+      "name": "Rafał Narowski",
+      "email": "rafal.narowski@o2.pl"
     }
   ],
   "keywords": [

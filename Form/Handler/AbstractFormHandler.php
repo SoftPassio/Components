@@ -1,6 +1,6 @@
 <?php
 
-namespace AppVerk\Components\Form\Handler;
+namespace SoftPassio\Components\Form\Handler;
 
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormFactory;

@@ -1,8 +1,8 @@
 <?php
 
-namespace AppVerk\Components\Doctrine;
+namespace SoftPassio\Components\Doctrine;
 
-use AppVerk\Components\Model\ApiClientInterface;
+use SoftPassio\Components\Model\ApiClientInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 interface ApiAccessTokenManagerInterface

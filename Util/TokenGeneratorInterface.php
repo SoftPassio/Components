@@ -1,6 +1,6 @@
 <?php
 
-namespace AppVerk\Components\Util;
+namespace SoftPassio\Components\Util;
 
 interface TokenGeneratorInterface
 {

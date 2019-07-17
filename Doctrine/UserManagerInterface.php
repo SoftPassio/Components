@@ -1,9 +1,9 @@
 <?php
 
-namespace AppVerk\Components\Doctrine;
+namespace SoftPassio\Components\Doctrine;
 
 use Gedmo\Timestampable\Timestampable;
-use AppVerk\Components\Model\UserInterface;
+use SoftPassio\Components\Model\UserInterface;
 
 interface UserManagerInterface extends Timestampable, ManagerInterface
 {

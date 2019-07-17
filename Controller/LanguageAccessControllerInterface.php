@@ -1,6 +1,6 @@
 <?php
 
-namespace AppVerk\Components\Controller;
+namespace SoftPassio\Components\Controller;
 
 interface LanguageAccessControllerInterface
 {

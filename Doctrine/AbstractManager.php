@@ -1,6 +1,6 @@
 <?php
 
-namespace AppVerk\Components\Doctrine;
+namespace SoftPassio\Components\Doctrine;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\Persistence\ObjectRepository;

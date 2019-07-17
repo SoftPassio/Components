@@ -1,6 +1,6 @@
 <?php
 
-namespace AppVerk\Components\Model;
+namespace SoftPassio\Components\Model;
 
 interface ApiClientInterface
 {

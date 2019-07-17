@@ -1,6 +1,6 @@
 <?php
 
-namespace AppVerk\Components\Doctrine;
+namespace SoftPassio\Components\Doctrine;
 
 interface DeletableInterface
 {
