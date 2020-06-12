@@ -2,42 +2,42 @@
 
 namespace SoftPassio\Components\Doctrine;
 
-use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\Common\Persistence\ObjectRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityRepository;
 
 abstract class AbstractManager implements ManagerInterface
 {
-    /** @var ObjectManager */
-    protected $objectManager;
+    /** @var EntityManagerInterface */
+    protected $entityManager;
 
     protected $className;
 
-    public function __construct($className, ObjectManager $objectManager)
+    public function __construct($className, EntityManagerInterface $entityManager)
     {
         $this->className = $className;
-        $this->objectManager = $objectManager;
+        $this->entityManager = $entityManager;
     }
 
     public function persistAndFlush(EntityInterface $entity)
     {
-        $this->objectManager->persist($entity);
-        $this->objectManager->flush();
+        $this->entityManager->persist($entity);
+        $this->entityManager->flush();
     }
 
     public function persist(EntityInterface $entity)
     {
-        $this->objectManager->persist($entity);
+        $this->entityManager->persist($entity);
     }
 
     public function flush()
     {
-        $this->objectManager->flush();
+        $this->entityManager->flush();
     }
 
     public function remove(EntityInterface $entity)
     {
-        $this->objectManager->remove($entity);
-        $this->objectManager->flush();
+        $this->entityManager->remove($entity);
+        $this->entityManager->flush();
     }
 
     public function find($id)
@@ -47,17 +47,17 @@ abstract class AbstractManager implements ManagerInterface
 
     public function refresh(EntityInterface $Field)
     {
-        $this->objectManager->refresh($Field);
+        $this->entityManager->refresh($Field);
     }
 
     /**
-     * @return ObjectRepository
+     * @return EntityRepository
      */
     public function getRepository()
     {
-        /** @var ObjectRepository $objectRepository */
-        $objectRepository = $this->objectManager->getRepository($this->className);
+        /** @var EntityRepository $entityRepository */
+        $entityRepository = $this->entityManager->getRepository($this->className);
 
-        return $objectRepository;
+        return $entityRepository;
     }
 }
